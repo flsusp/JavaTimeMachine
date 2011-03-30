@@ -15,119 +15,140 @@ public class TimeMachine {
         }
     }
 
+    public Long timeInMillis() {
+        return getTimeInMillis();
+    }
+
     public Date getTime() {
         return new Date(getTimeInMillis());
     }
 
-    public void reset() {
+    public Date time() {
+        return getTime();
+    }
+
+    public TimeMachine reset() {
         timestamp = null;
+        return this;
     }
 
-    public void stop() {
+    public TimeMachine startNow() {
         timestamp = System.currentTimeMillis();
+        return this;
     }
 
-    public void travelTo(Date date) {
+    public TimeMachine travelTo(Date date) {
         timestamp = date.getTime();
+        return this;
     }
 
-    public void forwardOneMinute() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine forwardOneMinute() {
+        if (!started()) {
+            startNow();
         }
 
         timestamp += 1000 * 60;
+        return this;
     }
 
-    public void forwardOneHour() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine forwardOneHour() {
+        if (!started()) {
+            startNow();
         }
 
         timestamp += 1000 * 60 * 60;
+        return this;
     }
 
-    public void forwardOneDay() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine forwardOneDay() {
+        if (!started()) {
+            startNow();
         }
 
         timestamp += 1000 * 60 * 60 * 24;
+        return this;
     }
 
-    public void forwardOneMonth() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine forwardOneMonth() {
+        if (!started()) {
+            startNow();
         }
-        
+
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(timestamp);
         c.add(Calendar.MONTH, 1);
 
         timestamp = c.getTimeInMillis();
+        return this;
     }
 
-    public void forwardOneYear() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine forwardOneYear() {
+        if (!started()) {
+            startNow();
         }
-        
+
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(timestamp);
         c.add(Calendar.YEAR, 1);
 
         timestamp = c.getTimeInMillis();
+        return this;
     }
 
-    public void backwardOneMinute() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine backwardOneMinute() {
+        if (!started()) {
+            startNow();
         }
 
         timestamp -= 1000 * 60;
+        return this;
     }
 
-    public void backwardOneHour() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine backwardOneHour() {
+        if (!started()) {
+            startNow();
         }
 
         timestamp -= 1000 * 60 * 60;
+        return this;
     }
 
-    public void backwardOneDay() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine backwardOneDay() {
+        if (!started()) {
+            startNow();
         }
 
         timestamp -= 1000 * 60 * 60 * 24;
+        return this;
     }
 
-    public void backwardOneMonth() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine backwardOneMonth() {
+        if (!started()) {
+            startNow();
         }
-        
+
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(timestamp);
         c.add(Calendar.MONTH, -1);
 
         timestamp = c.getTimeInMillis();
+        return this;
     }
 
-    public void backwardOneYear() {
-        if (!stopped()) {
-            stop();
+    public TimeMachine backwardOneYear() {
+        if (!started()) {
+            startNow();
         }
-        
+
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(timestamp);
         c.add(Calendar.YEAR, -1);
 
         timestamp = c.getTimeInMillis();
+        return this;
     }
 
-    public boolean stopped() {
+    public boolean started() {
         return timestamp != null;
     }
 }
