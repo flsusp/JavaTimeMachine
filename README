@@ -1,0 +1,3 @@
+The Java Time Machine allows you to navigate on time without having to change the operation system time behaviour. It is useful for testing applications that have strong time based requirements like retroactive and delayed operations.
+
+The idea is to avoid calling <code>new Date()</code> on your application code, replacing this call by one of <code>TimeMachine.geTime()</code> or <code>TimeMachine.getTimeInMillis()</code>. On tests you can use the navigation methods to redefine the time for your application and implement test scenarios that stress the application behaviour over the time.
