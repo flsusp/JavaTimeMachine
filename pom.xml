@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+					  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.flsusp</groupId>
+	<artifactId>javatimemachine</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>The Java Time Machine</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.sonar</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.easymock</groupId>
+				<artifactId>easymock</artifactId>
+				<version>3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.5.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.5.6</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.14</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>dextra-repository</id>
+			<name>Dextra Repository</name>
+			<url> https://dextranet.dextra.com.br/archiva/repository/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>dextra-snapshot</id>
+			<name>Dextra Snapshot Repository</name>
+			<url> https://dextranet.dextra.com.br/archiva/repository/snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+
+        <developers>
+                <developer>
+                        <id>fabio</id>
+                        <name>Fabio Lima Santos</name>
+                        <email>flsusp@gmail.com</email>
+                        <timezone>-3</timezone>
+                </developer>
+	</developers>
+
+</project>
