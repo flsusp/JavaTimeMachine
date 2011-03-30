@@ -101,14 +101,12 @@
 
 	<distributionManagement>
 		<repository>
-			<id>dextra-repository</id>
-			<name>Dextra Repository</name>
-			<url> https://dextranet.dextra.com.br/archiva/repository/releases/</url>
+			<id>flsusp-releases</id>
+			<url>https://github.com/flsusp/flsusp-maven-repo/raw/master/releases</url>
 		</repository>
 		<snapshotRepository>
-			<id>dextra-snapshot</id>
-			<name>Dextra Snapshot Repository</name>
-			<url> https://dextranet.dextra.com.br/archiva/repository/snapshots</url>
+			<id>flsusp-snapshots</id>
+			<url>https://github.com/flsusp/flsusp-maven-repo/raw/master/snapshots</url>
 			<uniqueVersion>false</uniqueVersion>
 		</snapshotRepository>
 	</distributionManagement>
